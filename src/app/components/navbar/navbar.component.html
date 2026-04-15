@@ -1,0 +1,50 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <nav class="container flex items-center justify-between h-20">
+    <!-- Logo -->
+    <div class="flex items-center gap-3 cursor-pointer transition-transform duration-300 hover:scale-105" (click)="scrollTo('hero')">
+      <span class="material-symbols-outlined text-2xl" style="color:#6C63FF">terminal</span>
+      <span class="font-grotesk text-2xl font-bold tracking-tight" style="color:#dee5ff">MA</span>
+    </div>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-10">
+      @for (item of navItems; track item.label) {
+        <a class="nav-link" [class.active]="activeSection() === item.id" (click)="scrollTo(item.id)">
+          {{ item.label }}
+        </a>
+      }
+    </div>
+
+    <!-- Contact Button -->
+    <button class="nav-cta hidden md:block" (click)="scrollTo('contact')">Contact</button>
+
+    <!-- Mobile Hamburger -->
+    <button class="md:hidden flex items-center border-none bg-transparent cursor-pointer" style="color:#dee5ff"
+      (click)="toggleDrawer()" aria-label="Menu">
+      <span class="material-symbols-outlined">{{ drawerOpen() ? 'close' : 'menu' }}</span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile Drawer Overlay -->
+@if (drawerOpen()) {
+  <div class="fixed inset-0 z-[55] bg-black/50" (click)="toggleDrawer()"></div>
+  <aside class="fixed right-0 top-0 h-full w-80 z-[60] p-6 flex flex-col"
+    style="background:#060e20; border-left:1px solid rgba(108,99,255,0.15); box-shadow:-20px 0 40px rgba(108,99,255,0.15)">
+    <div class="flex justify-between items-center mb-12">
+      <span class="font-grotesk text-2xl font-bold" style="color:#dee5ff">MA</span>
+      <button class="bg-transparent border-none cursor-pointer" style="color:#dee5ff" (click)="toggleDrawer()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-2">
+      @for (item of drawerItems; track item.label) {
+        <a class="drawer-link" [class.active]="activeSection() === item.id"
+          (click)="scrollTo(item.id); toggleDrawer()">
+          <span class="material-symbols-outlined">{{ item.icon }}</span>
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  </aside>
+}

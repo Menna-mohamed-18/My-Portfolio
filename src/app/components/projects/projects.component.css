@@ -1,0 +1,17 @@
+.project-card:hover .banner-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.action-icon:hover {
+  color: var(--primary) !important;
+}
+
+.live-btn:hover {
+  background: rgba(168, 164, 255, 0.1) !important;
+  color: #a8a4ff !important;
+  border-color: rgba(168, 164, 255, 0.3) !important;
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 40px -10px rgba(108, 99, 255, 0.12);
+}

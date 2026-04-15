@@ -1,0 +1,77 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background: rgba(6, 14, 32, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px -10px rgba(108, 99, 255, 0.08);
+  transition: background 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(6, 14, 32, 0.85);
+}
+
+.nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  color: rgba(222, 229, 255, 0.7);
+  cursor: pointer;
+  transition: color 0.25s ease;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.nav-link:hover {
+  color: #dee5ff;
+}
+
+.nav-link.active {
+  color: #6C63FF;
+  font-weight: 700;
+  border-bottom: 2px solid #6C63FF;
+  padding-bottom: 2px;
+}
+
+.nav-cta {
+  background: rgba(108, 99, 255, 0.1);
+  color: #6C63FF;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.nav-cta:hover {
+  background: #6C63FF;
+  color: white;
+}
+
+.drawer-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: rgba(222, 229, 255, 0.6);
+  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.drawer-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.drawer-link.active {
+  background: linear-gradient(to right, rgba(108, 99, 255, 0.2), transparent);
+  color: #62fae3;
+  border-left: 4px solid #62fae3;
+}

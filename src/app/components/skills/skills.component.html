@@ -1,0 +1,71 @@
+<section class="py-24">
+  <div class="container">
+
+   
+    <div class="mb-16">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
+        style="background:var(--surface-container-highest); color:#62fae3">
+        <span class="w-2 h-2 rounded-full" style="background:#62fae3"></span>
+        Technical Arsenal
+      </div>
+      <h2 class="font-grotesk font-bold tracking-tight leading-none mb-6" style="font-size:clamp(2.5rem,6vw,4.5rem); color:#dee5ff">
+        Crafting digital <span class="gradient-text">architecture.</span>
+      </h2>
+      <p class="text-lg max-w-2xl leading-relaxed" style="color:var(--on-surface-variant)">
+        Technologies and methodologies I employ to build scalable, high-performance web applications and systems.
+      </p>
+    </div>
+
+   
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      @for (group of skillGroups; track group.title) {
+        <div class="glass-card rounded-xl p-8 transition-all duration-300 hover:scale-[1.01]"
+          [ngClass]="group.colClass">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+              [style.background]="group.iconBg" [style.color]="group.iconColor">
+              <span class="material-symbols-outlined text-2xl">{{ group.icon }}</span>
+            </div>
+            <div>
+              <h3 class="font-grotesk text-xl font-bold tracking-tight mb-1">{{ group.title }}</h3>
+              <p class="text-sm" style="color:var(--on-surface-variant)">{{ group.description }}</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            @for (skill of group.skills; track skill.name) {
+              <div class="skill-chip inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 cursor-default"
+                style="background:var(--surface-container-highest)">
+                <span class="material-symbols-outlined text-base" style="color:#62fae3">{{ skill.icon }}</span>
+                <span>{{ skill.name }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  
+    <div class="flex items-center gap-6 mt-16 px-8 py-6 rounded-full"
+      style="background:var(--surface-container-low); border:1px solid rgba(64,72,93,0.1)">
+      <div class="flex">
+        <div class="bar-icon w-12 h-12 rounded-full flex items-center justify-center"
+          style="background:var(--surface-container-highest); border:2px solid var(--surface); z-index:3">
+          <span class="material-symbols-outlined" style="color:#a8a4ff">speed</span>
+        </div>
+        <div class="bar-icon w-12 h-12 rounded-full flex items-center justify-center -ml-3"
+          style="background:var(--surface-container-highest); border:2px solid var(--surface); z-index:2">
+          <span class="material-symbols-outlined" style="color:#62fae3">shield</span>
+        </div>
+        <div class="bar-icon w-12 h-12 rounded-full flex items-center justify-center -ml-3"
+          style="background:var(--surface-container-highest); border:2px solid var(--surface); z-index:1">
+          <span class="material-symbols-outlined" style="color:#ac8aff">bolt</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-grotesk font-bold mb-1" style="color:#dee5ff">Performance-First Approach</h4>
+        <p class="text-sm" style="color:var(--on-surface-variant)">Core vitals optimized at every level of the stack.</p>
+      </div>
+    </div>
+
+  </div>
+</section>

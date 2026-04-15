@@ -1,0 +1,25 @@
+.lang-badge-native {
+  background: rgba(98, 250, 227, 0.1);
+  color: #62fae3;
+}
+
+.lang-badge-good {
+  background: rgba(168, 164, 255, 0.1);
+  color: #a8a4ff;
+}
+
+.lang-bar-secondary {
+  background: #62fae3;
+}
+
+.lang-bar-primary {
+  background: #a8a4ff;
+}
+
+.stack-item.odd:hover {
+  color: #a8a4ff !important;
+}
+
+.stack-item.even:hover {
+  color: #62fae3 !important;
+}

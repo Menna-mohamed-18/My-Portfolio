@@ -1,0 +1,26 @@
+.field-input {
+  background: var(--surface-container-lowest);
+  border: 1px solid rgba(64, 72, 93, 0.25);
+  color: #dee5ff;
+  font-family: 'Inter', sans-serif;
+}
+
+.field-input::placeholder {
+  color: var(--on-surface-variant);
+  opacity: 0.5;
+}
+
+.field-input:focus {
+  border-color: rgba(103, 93, 249, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(108, 99, 255, 0.15);
+}
+
+.contact-value:hover {
+  color: #a8a4ff !important;
+}
+
+.social-circle:hover {
+  background: #6C63FF !important;
+  color: #000 !important;
+  transform: translateY(-2px);
+}

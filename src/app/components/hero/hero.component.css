@@ -1,0 +1,21 @@
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.social-link:hover {
+  color: var(--primary);
+}
+
+@media (min-width: 768px) {
+  .avatar-container {
+    width: 26rem !important;
+    height: 26rem !important;
+  }
+}

@@ -1,0 +1,116 @@
+<section class="hero-section flex flex-col justify-center min-h-[calc(100vh-5rem)]">
+  <div class="container hero-inner flex flex-col lg:flex-row items-center justify-between gap-16 py-20">
+
+   
+    <div class="flex-1 flex flex-col gap-8 text-center lg:text-left">
+
+    
+      <div class="status-badge inline-flex items-center gap-2 px-4 py-2 rounded-full w-fit mx-auto lg:mx-0"
+        style="background:rgba(20,31,56,0.6); backdrop-filter:blur(12px); border:1px solid rgba(64,72,93,0.2)">
+        <span class="w-2 h-2 rounded-full animate-pulse-dot" style="background:#62fae3"></span>
+        <span class="text-xs font-bold uppercase tracking-widest" style="color:#62fae3">Open for Opportunities</span>
+      </div>
+
+      
+      <div class="flex flex-col gap-4">
+        <h1 class="hero-name font-grotesk font-bold tracking-tight leading-none" style="color:#dee5ff;font-size:clamp(2.5rem,8vw,5rem)">
+          Menna Mohamed <br />
+          <span class="gradient-text">Abo Elela</span>
+        </h1>
+        <div class="flex items-center justify-center lg:justify-start gap-3 flex-wrap">
+          <span class="text-xl font-light" style="color:var(--on-surface-variant)">Specializing in</span>
+          <span class="font-grotesk text-xl font-semibold min-w-[240px]" style="color:#62fae3">
+            {{ typedText() }}<span class="animate-pulse-dot">|</span>
+          </span>
+        </div>
+      </div>
+
+    
+      <p class="text-lg leading-relaxed max-w-lg mx-auto lg:mx-0" style="color:rgba(163,170,196,0.8)">
+        Architecting scalable digital solutions with .NET precision and Angular fluidity.
+        Crafting high-performance web architectures that bridge technical complexity and human intuition.
+      </p>
+
+      
+      <div class="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start">
+        <button class="btn-primary" (click)="scrollTo('projects')">
+          View My Work
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+        <button class="btn-outline" (click)="downloadCV()">
+          Download CV
+        </button>
+      </div>
+
+   
+      <div class="flex items-center gap-6 justify-center lg:justify-start">
+        <a href="https://github.com/Menna-mohamed-18" target="_blank" class="social-link">
+          <span class="material-symbols-outlined">code</span>
+          <span>Github</span>
+        </a>
+        <a href="https://www.linkedin.com/in/menna18/" target="_blank" class="social-link">
+          <span class="material-symbols-outlined">work</span>
+          <span>LinkedIn</span>
+        </a>
+        <a href="mailto:mennaaboelella18@gmail.com" class="social-link">
+          <span class="material-symbols-outlined">mail</span>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+
+   
+    <div class="flex-1 flex justify-center items-center relative">
+   
+      <div class="absolute top-0 right-0 w-32 h-32 rounded-2xl blur-[1px] rotate-12"
+        style="background:rgba(98,250,227,0.08); border:1px solid rgba(98,250,227,0.15)"></div>
+      <div class="absolute bottom-10 left-10 w-24 h-24 rounded-full blur-[1px] -rotate-12"
+        style="background:rgba(168,164,255,0.08); border:1px solid rgba(168,164,255,0.15)"></div>
+
+      
+      <div class="avatar-container relative" style="width:18rem;height:18rem">
+     
+        <div class="absolute inset-0 rounded-full animate-spin-slow"
+          style="border:2px solid rgba(168,164,255,0.2)"></div>
+        <div class="absolute inset-4 rounded-full animate-spin-reverse"
+          style="border:1px dashed rgba(98,250,227,0.25)"></div>
+
+       
+        <div class="absolute inset-8 rounded-full overflow-hidden flex items-center justify-center"
+          style="border:4px solid var(--surface-container-high); box-shadow:0 0 60px rgba(168,164,255,0.2); background:linear-gradient(135deg,var(--surface-container-high),var(--surface-container))">
+         <img src="/images/WhatsApp Image 2026-02-18 at 9.53.45 AM (1).jpeg" alt="">
+        </div>
+
+       
+        <div class="float-tag float-tag-1 absolute flex items-center gap-2 px-4 py-2 rounded-xl font-grotesk text-xs font-bold tracking-wide"
+          style="top:-1rem; right:-1rem; background:rgba(25,37,64,0.85); backdrop-filter:blur(20px); border:1px solid rgba(98,250,227,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.3); color:#dee5ff">
+          <span class="material-symbols-outlined" style="color:#62fae3">integration_instructions</span>
+          <span>.NET Core</span>
+        </div>
+        <div class="float-tag float-tag-2 absolute flex items-center gap-2 px-4 py-2 rounded-xl font-grotesk text-xs font-bold tracking-wide"
+          style="bottom:3rem; left:-2rem; background:rgba(25,37,64,0.85); backdrop-filter:blur(20px); border:1px solid rgba(168,164,255,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.3); color:#dee5ff">
+          <span class="material-symbols-outlined" style="color:#a8a4ff">data_object</span>
+          <span>Angular 2+</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="w-full py-12 overflow-hidden" style="background:rgba(9,19,40,0.3); border-top:1px solid rgba(64,72,93,0.1); border-bottom:1px solid rgba(64,72,93,0.1)">
+    <div class="marquee-inner flex gap-12 w-max animate-marquee opacity-40 hover:opacity-100 transition-opacity duration-500 hover:[animation-play-state:paused]">
+      @for (skill of marqueeSkills; track skill.label) {
+        <span class="flex items-center gap-2 font-grotesk text-xl font-bold whitespace-nowrap" style="color:var(--on-surface-variant)">
+          <span class="material-symbols-outlined">{{ skill.icon }}</span>
+          {{ skill.label }}
+        </span>
+      }
+      @for (skill of marqueeSkills; track skill.label + '_2') {
+        <span class="flex items-center gap-2 font-grotesk text-xl font-bold whitespace-nowrap" style="color:var(--on-surface-variant)">
+          <span class="material-symbols-outlined">{{ skill.icon }}</span>
+          {{ skill.label }}
+        </span>
+      }
+    </div>
+  </div>
+</section>

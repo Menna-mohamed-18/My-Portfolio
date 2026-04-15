@@ -1,0 +1,10 @@
+/* Desktop card widths via md: not easily expressible in Tailwind alone */
+@media (min-width: 768px) {
+  .glass-card {
+    width: calc(50% - 1.5rem) !important;
+  }
+
+  .pl-12-md {
+    padding-left: 3rem;
+  }
+}

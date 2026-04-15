@@ -1,0 +1,43 @@
+<div class="bg-wrapper relative min-h-screen">
+
+  <div class="atm-bg fixed inset-0 z-0 pointer-events-none">
+    <div class="absolute rounded-full blur-[120px] top-[-10%] left-[-5%] w-[40%] h-[40%] bg-[rgba(108,99,255,0.06)]"></div>
+    <div class="absolute rounded-full blur-[120px] bottom-[-10%] right-[-5%] w-[35%] h-[35%] bg-[rgba(98,250,227,0.05)]"></div>
+    <div class="absolute inset-0 opacity-[0.025]"
+      style="background-image: radial-gradient(#dee5ff 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+  </div>
+
+  <app-navbar />
+
+  <main class="relative z-10 pt-20">
+    <app-hero id="hero" />
+    <app-about id="about" />
+    <app-skills id="skills" />
+    <app-experience id="experience" />
+    <app-projects id="projects" />
+    <app-contact id="contact" />
+  </main>
+
+
+  <footer class="relative z-10 bg-[#060e20] border-t border-[rgba(108,99,255,0.1)]">
+    <div class="container flex flex-col md:flex-row items-center justify-between gap-4 py-12">
+      <p class="font-inter text-sm text-[rgba(222,229,255,0.4)] tracking-wide">
+        © 2025 Menna Mohamed Abo Elela. Built with Angular 20 & ❤️
+      </p>
+      <div class="flex gap-8">
+        <a href="https://github.com/" target="_blank" class="footer-link">Github</a>
+        <a href="https://linkedin.com/" target="_blank" class="footer-link">LinkedIn</a>
+        <a href="mailto:mennaaboelella18@gmail.com" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <button
+    class="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 border back-to-top-btn"
+    (click)="scrollToTop()"
+    aria-label="Back to top">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+</div>

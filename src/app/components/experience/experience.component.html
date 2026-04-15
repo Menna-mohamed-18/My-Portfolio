@@ -1,0 +1,83 @@
+<section class="py-24">
+  <div class="container">
+
+   
+    <div class="mb-20">
+      <span class="section-tag">Professional Journey</span>
+      <h2 class="font-grotesk font-bold tracking-tight leading-tight mb-6 max-w-2xl" style="font-size:clamp(2.5rem,6vw,4.5rem); color:#dee5ff">
+        The Architectural <span class="gradient-text">Timeline.</span>
+      </h2>
+      <p class="text-lg max-w-xl leading-relaxed" style="color:var(--on-surface-variant)">
+        A sequential log of technical mastery and academic excellence in software architecture
+        and modern development frameworks.
+      </p>
+    </div>
+
+   
+    <div class="relative flex flex-col gap-20">
+  
+      <div class="timeline-line absolute top-0 bottom-0 w-0.5 left-4 md:left-1/2 md:-translate-x-1/2"
+        style="background:linear-gradient(to bottom, rgba(168,164,255,0.4), rgba(98,250,227,0.4), transparent)">
+      </div>
+
+      @for (exp of experiences; track exp.role; let i = $index) {
+        <div class="relative flex flex-col pl-14 md:pl-0 md:flex-row md:items-center"
+          [class.md:flex-row-reverse]="exp.side === 'right'">
+
+         
+          <div class="hidden md:flex flex-col gap-2 text-right pr-12"
+            [class.text-left]="exp.side === 'right'"
+            [class.pr-12]="exp.side === 'left'"
+            [class.pl-12]="exp.side === 'right'"
+            [class.pr-0]="exp.side === 'right'"
+            style="width: calc(50% - 1.5rem)">
+            <span class="inline-flex items-center self-end px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest w-fit"
+              [class.self-start]="exp.side === 'right'"
+              style="color:#50ebd5; background:rgba(0,107,95,0.15)">{{ exp.period }}</span>
+            <h4 class="font-grotesk text-xl font-bold" style="color:#dee5ff">{{ exp.org }}</h4>
+          </div>
+
+         
+          <div class="absolute w-4 h-4 rounded-full z-10 left-[calc(1rem-8px)] top-8 md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 flex-shrink-0"
+            [style.background]="exp.dotColor"
+            [style.box-shadow]="'0 0 20px ' + exp.dotGlow"
+            style="border:3px solid #060e20">
+          </div>
+
+      
+          <div class="glass-card rounded-xl p-8 transition-all duration-300 hover:border-[rgba(168,164,255,0.4)]"
+            [class.pl-12]="exp.side === 'left'"
+            style="width:100%; border:1px solid rgba(64,72,93,0.2)"
+            [ngStyle]="{'md-width': 'calc(50% - 1.5rem)'}">
+            <div class="text-xs font-bold uppercase tracking-widest mb-4 md:hidden" style="color:#50ebd5">
+              {{ exp.period }}
+            </div>
+            <h3 class="font-grotesk text-2xl font-bold mb-1" style="color:#dee5ff">{{ exp.role }}</h3>
+            <p class="text-sm mb-4" style="color:var(--on-surface-variant)">{{ exp.org }}</p>
+            <p class="leading-relaxed mb-6" style="color:var(--on-surface-variant)">{{ exp.description }}</p>
+            <div class="flex flex-wrap gap-2">
+              @for (tag of exp.tags; track tag) {
+                <span class="px-3 py-1 rounded-full text-xs font-medium" style="background:var(--surface-container-highest); color:#62fae3">
+                  {{ tag }}
+                </span>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  
+    <div class="relative mt-24 p-12 rounded-2xl text-center overflow-hidden"
+      style="background:var(--surface-container-low); border:1px solid rgba(64,72,93,0.1)">
+      <div class="absolute inset-0 pointer-events-none"
+        style="background:linear-gradient(135deg,rgba(168,164,255,0.04),transparent)"></div>
+      <h3 class="font-grotesk text-4xl font-bold mb-4 relative z-10" style="color:#dee5ff">Building the next chapter.</h3>
+      <p class="max-w-lg mx-auto mb-10 leading-relaxed relative z-10" style="color:var(--on-surface-variant)">
+        Currently seeking opportunities to apply full-stack skills to complex, large-scale systems.
+      </p>
+      <button class="btn-primary relative z-10" (click)="scrollToContact()">Let's Collaborate</button>
+    </div>
+
+  </div>
+</section>

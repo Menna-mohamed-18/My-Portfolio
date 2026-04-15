@@ -1,0 +1,138 @@
+<section class="py-24">
+  <div class="container">
+
+  
+    <div class="mb-16">
+      <span class="section-tag">Get In Touch</span>
+      <h2 class="font-grotesk font-bold tracking-tight max-w-xl leading-tight" style="font-size:clamp(2rem,5vw,3.5rem); color:#dee5ff">
+        Let's build something
+        <span class="gradient-text"> extraordinary</span> together.
+      </h2>
+    </div>
+
+
+    <div class="grid grid-cols-1 lg:grid-cols-[5fr_7fr] gap-8 items-start">
+
+  
+      <div class="flex flex-col gap-6">
+
+     
+        <div class="glass-card rounded-xl p-8">
+          <h3 class="font-grotesk text-2xl font-bold flex items-center gap-4 mb-10">
+            <span class="inline-block w-8 h-0.5" style="background:#62fae3"></span>
+            Connect Details
+          </h3>
+          <div class="flex flex-col gap-8">
+            @for (item of contactItems; track item.label) {
+              <div class="flex items-start gap-5">
+                <div class="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-300 hover:scale-110"
+                  [style.color]="item.color" style="background:var(--surface-container-high)">
+                  <span class="material-symbols-outlined">{{ item.icon }}</span>
+                </div>
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-widest mb-1" style="color:var(--on-surface-variant)">{{ item.label }}</p>
+                  <a class="contact-value font-grotesk text-base font-medium transition-colors duration-300"
+                    [href]="item.href" [target]="item.target" style="color:#dee5ff; text-decoration:none">
+                    {{ item.value }}
+                  </a>
+                </div>
+              </div>
+            }
+          </div>
+
+        
+          <div class="mt-10 pt-10" style="border-top:1px solid rgba(64,72,93,0.1)">
+            <p class="text-xs uppercase tracking-[0.15em] mb-5" style="color:var(--on-surface-variant)">Follow the process</p>
+            <div class="flex gap-4">
+              <a href="https://github.com/Menna-mohamed-18" target="_blank" class="social-circle w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
+                style="background:var(--surface-container-highest); color:#dee5ff; text-decoration:none" aria-label="GitHub">
+                <span class="material-symbols-outlined">code</span>
+              </a>
+              <a href="https://www.linkedin.com/in/menna18/" target="_blank" class="social-circle w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
+                style="background:var(--surface-container-highest); color:#dee5ff; text-decoration:none" aria-label="LinkedIn">
+                <span class="material-symbols-outlined">work</span>
+              </a>
+              <a href="mailto:mennaaboelella18@gmail.com" class="social-circle w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300"
+                style="background:var(--surface-container-highest); color:#dee5ff; text-decoration:none" aria-label="Email">
+                <span class="material-symbols-outlined">mail</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="glass-card rounded-xl p-7 relative overflow-hidden min-h-[8rem]"
+          style="background:linear-gradient(135deg,rgba(103,93,249,0.15),rgba(98,250,227,0.05))">
+          <div class="absolute inset-0" style="background:linear-gradient(135deg,rgba(103,93,249,0.1),transparent)"></div>
+          <div class="relative z-10">
+            <p class="font-grotesk text-lg font-bold mb-2" style="color:#dee5ff">Project Status: Available</p>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full animate-pulse-dot" style="background:#62fae3"></span>
+              <span class="text-sm font-medium uppercase tracking-wide" style="color:#62fae3">Accepting new inquiries</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+   
+      <div class="glass-card rounded-xl p-10">
+        @if (submitted()) {
+          <div class="flex flex-col items-center justify-center gap-4 min-h-[20rem] text-center">
+            <span class="material-symbols-outlined text-6xl" style="color:#62fae3; font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 48">check_circle</span>
+            <h3 class="font-grotesk text-3xl font-bold" style="color:#dee5ff">Message Sent!</h3>
+            <p style="color:var(--on-surface-variant); max-width:20rem">Thank you for reaching out. I'll get back to you soon.</p>
+            <button class="btn-primary mt-2" (click)="submitted.set(false)">Send Another</button>
+          </div>
+        } @else {
+          <div class="flex flex-col gap-8">
+
+          
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+              <div class="flex flex-col gap-2">
+                <label class="text-xs font-medium uppercase tracking-widest" style="color:var(--on-surface-variant)">Your Name</label>
+                <input class="field-input w-full rounded-lg px-4 py-4 text-base outline-none transition-all duration-300"
+                  type="text" placeholder="John Doe" [(ngModel)]="form.name" />
+              </div>
+              <div class="flex flex-col gap-2">
+                <label class="text-xs font-medium uppercase tracking-widest" style="color:var(--on-surface-variant)">Email Address</label>
+                <input class="field-input w-full rounded-lg px-4 py-4 text-base outline-none transition-all duration-300"
+                  type="email" placeholder="john@example.com" [(ngModel)]="form.email" />
+              </div>
+            </div>
+
+        
+            <div class="flex flex-col gap-2">
+              <label class="text-xs font-medium uppercase tracking-widest" style="color:var(--on-surface-variant)">Subject</label>
+              <select class="field-input w-full rounded-lg px-4 py-4 text-base outline-none transition-all duration-300 cursor-pointer appearance-none"
+                [(ngModel)]="form.subject">
+                <option>Project Inquiry</option>
+                <option>Collaboration</option>
+                <option>General Message</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+           
+            <div class="flex flex-col gap-2">
+              <label class="text-xs font-medium uppercase tracking-widest" style="color:var(--on-surface-variant)">Your Message</label>
+              <textarea class="field-input w-full rounded-lg px-4 py-4 text-base outline-none transition-all duration-300 resize-none"
+                rows="6" placeholder="Tell me about your project or vision..." [(ngModel)]="form.message">
+              </textarea>
+            </div>
+
+          
+            <button class="btn-primary w-full sm:w-auto justify-center" (click)="sendMessage()" [disabled]="sending()">
+              @if (sending()) {
+                <span>Sending...</span>
+              } @else {
+                <span>Send Message</span>
+                <span class="material-symbols-outlined">send</span>
+              }
+            </button>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>
